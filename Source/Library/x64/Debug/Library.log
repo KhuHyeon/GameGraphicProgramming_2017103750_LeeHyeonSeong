@@ -1,0 +1,36 @@
+﻿  Game.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winbase.h(7679,48): warning C5039: 'TpSetCallbackCleanupGroup': pointer or reference to potentially throwing function passed to 'extern "C"' function under -EHc. Undefined behavior may occur if this function throws an exception.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winioctl.h(10326,22): warning C4668: '_WIN32_WINNT_WIN10_TH2' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winioctl.h(10332,22): warning C4668: '_WIN32_WINNT_WIN10_RS1' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winioctl.h(10337,22): warning C4668: '_WIN32_WINNT_WIN10_TH2' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winioctl.h(10341,22): warning C4668: '_WIN32_WINNT_WIN10_TH2' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winioctl.h(10348,22): warning C4668: '_WIN32_WINNT_WIN10_RS2' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winioctl.h(10358,22): warning C4668: '_WIN32_WINNT_WIN10_RS2' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winioctl.h(10362,22): warning C4668: '_WIN32_WINNT_WIN10_TH2' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winioctl.h(10367,22): warning C4668: '_WIN32_WINNT_WIN10_RS3' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winioctl.h(10374,22): warning C4668: '_WIN32_WINNT_WIN10_RS4' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winioctl.h(10377,22): warning C4668: '_WIN32_WINNT_WIN10_RS1' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winioctl.h(10380,22): warning C4668: '_WIN32_WINNT_WIN10_RS4' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winioctl.h(10385,22): warning C4668: '_WIN32_WINNT_WIN10_RS1' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winioctl.h(10388,22): warning C4668: '_WIN32_WINNT_WIN10_RS5' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winioctl.h(10588,22): warning C4668: '_WIN32_WINNT_WIN10_RS2' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winioctl.h(10612,22): warning C4668: '_WIN32_WINNT_WIN10_RS5' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winioctl.h(14093,22): warning C4668: '_WIN32_WINNT_WIN10_RS5' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winioctl.h(14296,22): warning C4668: '_WIN32_WINNT_WIN10_RS5' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winioctl.h(14399,22): warning C4668: '_WIN32_WINNT_WIN10_RS5' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winioctl.h(14495,21): warning C4668: '_WIN32_WINNT_WIN10_RS5' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winioctl.h(14599,22): warning C4668: '_WIN32_WINNT_WIN10_RS5' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winioctl.h(15350,23): warning C4668: '_WIN32_WINNT_WIN10_RS2' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winioctl.h(15406,22): warning C4668: '_WIN32_WINNT_WIN10_RS2' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winioctl.h(15525,22): warning C4668: '_WIN32_WINNT_WIN10_RS3' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winioctl.h(15675,22): warning C4668: '_WIN32_WINNT_WIN10_RS4' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winioctl.h(15688,22): warning C4668: '_WIN32_WINNT_WIN10_RS4' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winioctl.h(15916,22): warning C4668: '_WIN32_WINNT_WIN10_RS1' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
+  Library.vcxproj -> C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Build\x64\Debug\Libraryd.lib
+  하위 디렉터리 또는 파일 C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Build\..\Library\x64\Debug이(가) 이미 있습니다.
+  C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Build\x64\Debug\Game.exe
+  C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Build\x64\Debug\Game.pdb
+  C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Build\x64\Debug\Libraryd.idb
+  C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Build\x64\Debug\Libraryd.lib
+  C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Build\x64\Debug\Libraryd.pdb
+          5개 파일이 복사되었습니다.
