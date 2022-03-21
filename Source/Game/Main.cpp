@@ -36,30 +36,22 @@
 -----------------------------------------------------------------F-F*/
 INT WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPWSTR lpCmdLine, _In_ INT nCmdShow)
 {
-    /*--------------------------------------------------------------------
-      TODO: Unreferenced parameters (remove the comment)
-    --------------------------------------------------------------------*/
+
     UNREFERENCED_PARAMETER(hPrevInstance);
     UNREFERENCED_PARAMETER(lpCmdLine);
 
-    /*--------------------------------------------------------------------
-      TODO: Initialization (remove the comment)
-    --------------------------------------------------------------------*/
     if (FAILED(library::InitWindow(hInstance, nCmdShow)))
         return 0;
 
     if (FAILED(library::InitDevice()))
     {
-	    library::CleanupDevice();
+        library::CleanupDevice();
         return 0;
     }
 
     // Main message loop
     MSG msg = { 0 };
 
-    /*--------------------------------------------------------------------
-      TODO: Main message loop (remove the comment)
-    --------------------------------------------------------------------*/
     while (WM_QUIT != msg.message)
     {
         if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
@@ -73,9 +65,6 @@ INT WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
         }
     }
 
-    /*--------------------------------------------------------------------
-      TODO: Destroy (remove the comment)
-    --------------------------------------------------------------------*/
     library::CleanupDevice();
 
     return static_cast<INT>(msg.wParam);
