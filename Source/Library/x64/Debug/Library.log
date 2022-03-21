@@ -591,8 +591,8 @@ C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\d3d11_4.h(3529,11
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\d3d11_4.h(3533,5): warning C4820: 'D3D11_VIDEO_DECODER_BUFFER_DESC2': '4' bytes padding added after data member 'D3D11_VIDEO_DECODER_BUFFER_DESC2::cBlocksStripeClear'
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\DirectXMath.h(22,103): warning C4668: '_MANAGED' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\DirectXMath.h(22,118): warning C4668: '_M_CEE' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
-C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(118,40): warning C4365: 'initializing': conversion from 'LONG' to 'UINT', signed/unsigned mismatch
-C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(119,41): warning C4365: 'initializing': conversion from 'LONG' to 'UINT', signed/unsigned mismatch
+C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(113,40): warning C4365: 'initializing': conversion from 'LONG' to 'UINT', signed/unsigned mismatch
+C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(114,41): warning C4365: 'initializing': conversion from 'LONG' to 'UINT', signed/unsigned mismatch
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\winrt\wrl\implements.h(1623,1): warning C4365: 'initializing': conversion from 'LONG' to 'unsigned long', signed/unsigned mismatch
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\winrt\wrl\implements.h(1623): message : while compiling class template member function 'unsigned long Microsoft::WRL::Details::RuntimeClassImpl<Microsoft::WRL::RuntimeClassFlags<2>,true,false,true,IUnknown>::InternalRelease(void) noexcept'
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\winrt\wrl\implements.h(1585): message : see reference to function template instantiation 'unsigned long Microsoft::WRL::Details::RuntimeClassImpl<Microsoft::WRL::RuntimeClassFlags<2>,true,false,true,IUnknown>::InternalRelease(void) noexcept' being compiled
@@ -601,27 +601,27 @@ C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\winrt\wrl\event.h(44
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\winrt\wrl\implements.h(1619,1): warning C4365: 'return': conversion from 'LONG' to 'unsigned long', signed/unsigned mismatch
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\winrt\wrl\implements.h(1615): message : while compiling class template member function 'unsigned long Microsoft::WRL::Details::RuntimeClassImpl<Microsoft::WRL::RuntimeClassFlags<2>,true,false,true,IUnknown>::InternalAddRef(void) noexcept'
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\winrt\wrl\implements.h(1580): message : see reference to function template instantiation 'unsigned long Microsoft::WRL::Details::RuntimeClassImpl<Microsoft::WRL::RuntimeClassFlags<2>,true,false,true,IUnknown>::InternalAddRef(void) noexcept' being compiled
-C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(247): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
-C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(246): message : index 'hr' range checked by comparison on this line
-C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(247): message : feeds call on this line
-C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(242): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
-C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(241): message : index 'hr' range checked by comparison on this line
-C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(242): message : feeds call on this line
+C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(241): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(240): message : index 'hr' range checked by comparison on this line
+C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(241): message : feeds call on this line
 C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(236): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
 C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(235): message : index 'hr' range checked by comparison on this line
 C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(236): message : feeds call on this line
-C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(181): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
-C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(180): message : index 'hr' range checked by comparison on this line
-C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(181): message : feeds call on this line
-C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(160): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
-C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(159): message : index 'hr' range checked by comparison on this line
-C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(160): message : feeds call on this line
-C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(152): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
-C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(143): message : index 'driverTypeIndex' range checked by comparison on this line
-C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(152): message : feeds call on this line
-C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(146): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
-C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(143): message : index 'driverTypeIndex' range checked by comparison on this line
-C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(146): message : feeds call on this line
+C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(230): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(229): message : index 'hr' range checked by comparison on this line
+C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(230): message : feeds call on this line
+C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(175): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(174): message : index 'hr' range checked by comparison on this line
+C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(175): message : feeds call on this line
+C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(155): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(154): message : index 'hr' range checked by comparison on this line
+C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(155): message : feeds call on this line
+C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(147): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(138): message : index 'driverTypeIndex' range checked by comparison on this line
+C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(147): message : feeds call on this line
+C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(141): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(138): message : index 'driverTypeIndex' range checked by comparison on this line
+C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Source\Library\Game\Game.cpp(141): message : feeds call on this line
   Library.vcxproj -> C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Build\x64\Debug\Libraryd.lib
   하위 디렉터리 또는 파일 C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Build\..\Library\x64\Debug이(가) 이미 있습니다.
   C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Build\x64\Debug\Game.exe
