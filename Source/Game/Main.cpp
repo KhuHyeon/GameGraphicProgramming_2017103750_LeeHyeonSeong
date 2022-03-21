@@ -1,22 +1,23 @@
-/*+===================================================================
+﻿/*+===================================================================
   File:      MAIN.CPP
 
-  Summary:   This application serves as a test code for the project
+  Summary:   This application demonstrates creating a Direct3D 11 device
 
   Origin:    http://msdn.microsoft.com/en-us/library/windows/apps/ff729718.aspx
 
   Originally created by Microsoft Corporation under MIT License
-  ? 2022 Kyung Hee University
+  © 2022 Kyung Hee University
 ===================================================================+*/
 
 #include "Common.h"
 #include "Game/Game.h"
 
+
 /*F+F+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   Function: wWinMain
 
-  Summary:  Entry point to the program. Initializes everything and 
-            goes into a message processing loop. Idle time is used to 
+  Summary:  Entry point to the program. Initializes everything and
+            goes into a message processing loop. Idle time is used to
             render the scene.
 
   Args:     HINSTANCE hInstance
@@ -24,10 +25,10 @@
             HINSTANCE hPrevInstance
               Has no meaning.
             LPWSTR lpCmdLine
-              Contains the command-line arguments as a Unicode 
+              Contains the command-line arguments as a Unicode
               string
             INT nCmdShow
-              Flag that says whether the main application window 
+              Flag that says whether the main application window
               will be minimized, maximized, or shown normally
 
   Returns:  INT
@@ -35,7 +36,47 @@
 -----------------------------------------------------------------F-F*/
 INT WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPWSTR lpCmdLine, _In_ INT nCmdShow)
 {
-  library::PrintHi();
+    /*--------------------------------------------------------------------
+      TODO: Unreferenced parameters (remove the comment)
+    --------------------------------------------------------------------*/
+    UNREFERENCED_PARAMETER(hPrevInstance);
+    UNREFERENCED_PARAMETER(lpCmdLine);
 
-  return 0;
+    /*--------------------------------------------------------------------
+      TODO: Initialization (remove the comment)
+    --------------------------------------------------------------------*/
+    if (FAILED(library::InitWindow(hInstance, nCmdShow)))
+        return 0;
+
+    if (FAILED(library::InitDevice()))
+    {
+	    library::CleanupDevice();
+        return 0;
+    }
+
+    // Main message loop
+    MSG msg = { 0 };
+
+    /*--------------------------------------------------------------------
+      TODO: Main message loop (remove the comment)
+    --------------------------------------------------------------------*/
+    while (WM_QUIT != msg.message)
+    {
+        if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
+        {
+            TranslateMessage(&msg);
+            DispatchMessage(&msg);
+        }
+        else
+        {
+	        library::Render();
+        }
+    }
+
+    /*--------------------------------------------------------------------
+      TODO: Destroy (remove the comment)
+    --------------------------------------------------------------------*/
+    library::CleanupDevice();
+
+    return static_cast<INT>(msg.wParam);
 }
