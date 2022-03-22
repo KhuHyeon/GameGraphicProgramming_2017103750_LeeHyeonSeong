@@ -257,19 +257,8 @@ namespace library
 
     void CleanupDevice()
     {
+        // LAB 01에서 틀린 부분 (Realease 한것을 다시 한번 Release하는 오류가 발생함 -> 삭제하여 수정완료)
         if (g_pImmediateContext) g_pImmediateContext->ClearState();
-
-        /*
-        // LAB 01에서 틀린 부분 (Realease 한것을 다시 한번 Release하는 오류가 발생함)
-        if (g_pRenderTargetView) g_pRenderTargetView->Release();
-        if (g_pSwapChain1) g_pSwapChain1->Release();
-        if (g_pSwapChain) g_pSwapChain->Release();
-        if (g_pImmediateContext1) g_pImmediateContext1->Release();
-        if (g_pImmediateContext) g_pImmediateContext->Release();
-        if (g_pd3dDevice) g_pd3dDevice->Release();
-    	if (g_pd3dDevice1) g_pd3dDevice1->Release();
-    	*/
-        
     }
 
     void Render()
