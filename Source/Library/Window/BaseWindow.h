@@ -107,7 +107,7 @@ namespace library
             CREATESTRUCT* pCreate = reinterpret_cast<CREATESTRUCT*>(lParam);
             pThis = reinterpret_cast<DerivedType*>(pCreate->lpCreateParams);
             SetWindowLongPtr(hWnd, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(pThis));
-            pThis->m_hwnd = hWnd;
+            pThis->m_hWnd = hWnd;
         }
         else
         {
@@ -209,8 +209,6 @@ namespace library
         }
 
         // Create window
-        m_hInstance = hInstance;
-        AdjustWindowRect(&rc, WS_OVERLAPPEDWINDOW, FALSE);
         m_hWnd = CreateWindowEx(0, GetWindowClassName(), pszWindowName, dwStyle, x, y, nWidth, nHeight, hWndParent, hMenu,
             hInstance, pState);
 

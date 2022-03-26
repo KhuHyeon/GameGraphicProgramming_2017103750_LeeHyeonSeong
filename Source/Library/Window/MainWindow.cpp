@@ -43,7 +43,7 @@ namespace library
             return E_FAIL;
 
         RECT rc = { 0, 0, 800, 600 };
-
+        AdjustWindowRect(&rc, WS_OVERLAPPEDWINDOW, FALSE);
         return initialize(hInstance, nCmdShow, pszWindowName,
             WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX,
             CW_USEDEFAULT, CW_USEDEFAULT, rc.right - rc.left, rc.bottom - rc.top,
@@ -87,24 +87,27 @@ namespace library
     --------------------------------------------------------------------*/
     LRESULT MainWindow::HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam)
     {
+        PAINTSTRUCT ps;
+        HDC hdc;
+
         switch (uMsg)
         {
+        case WM_PAINT:
+            hdc = BeginPaint(m_hWnd, &ps);
+            EndPaint(m_hWnd, &ps);
+            break;
+
         case WM_DESTROY:
             PostQuitMessage(0);
-            return 0;
+            break;
 
-        case WM_PAINT:
-        {
-            PAINTSTRUCT ps;
-            HDC hdc = BeginPaint(m_hWnd, &ps);
-            FillRect(hdc, &ps.rcPaint, reinterpret_cast<HBRUSH>((COLOR_WINDOW + 1)));
-            EndPaint(m_hWnd, &ps);
-        }
-        return 0;
+            // Note that this tutorial does not handle resizing (WM_SIZE) requests,
+            // so we created the window without the resize border.
 
         default:
             return DefWindowProc(m_hWnd, uMsg, wParam, lParam);
         }
-        return TRUE;
+
+        return 0;
     }
 }
