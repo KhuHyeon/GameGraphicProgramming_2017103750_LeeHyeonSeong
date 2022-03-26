@@ -40,7 +40,7 @@ namespace library
     class BaseWindow
     {
     public:
-        static LRESULT CALLBACK WindowProc(_In_ HWND hWnd, _In_ UINT uMsg, _In_ WPARAM wParam, _In_ LPARAM lParam);
+        static LRESULT CALLBACK window_proc(_In_ HWND hWnd, _In_ UINT uMsg, _In_ WPARAM wParam, _In_ LPARAM lParam);
 
         BaseWindow();
         BaseWindow(const BaseWindow& rhs) = delete;
@@ -97,17 +97,11 @@ namespace library
     /*--------------------------------------------------------------------
       TODO: BaseWindow<DerivedType>::WindowProc definition (remove the comment)
     --------------------------------------------------------------------*/
+    template <class DerivedType>
+    LRESULT BaseWindow<DerivedType>::window_proc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+    {
 
-    /*M+M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M
-        Method:   BaseWindow<DerivedType>::BaseWindow
-
-        Summary:  Constructor
-
-        Modifies: [m_hInstance, m_hWnd, m_pszWindowName].
-    M---M---M---M---M---M---M---M---M---M---M---M---M---M---M---M---M-M*/
-    /*--------------------------------------------------------------------
-      TODO: BaseWindow<DerivedType>::BaseWindow definition (remove the comment)
-    --------------------------------------------------------------------*/
+    }
 
     /*M+M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M
         Method:   BaseWindow<DerivedType>::GetWindow()
@@ -120,6 +114,12 @@ namespace library
     /*--------------------------------------------------------------------
       TODO: BaseWindow<DerivedType>::GetWindow definition (remove the comment)
     --------------------------------------------------------------------*/
+    template <class DerivedType>
+    HWND BaseWindow<DerivedType>::GetWindow() const
+    {
+
+    }
+
 
     /*M+M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M
       Method:   BaseWindow<DerivedType>::initialize
@@ -158,4 +158,11 @@ namespace library
     /*--------------------------------------------------------------------
       TODO: BaseWindow<DerivedType>::initialize definition (remove the comment)
     --------------------------------------------------------------------*/
+    template <class DerivedType>
+    HRESULT BaseWindow<DerivedType>::initialize(HINSTANCE hInstance, INT nCmdShow, PCWSTR pszWindowName, DWORD dwStyle,
+        INT x, INT y, INT nWidth, INT nHeight, HWND hWndParent, HMENU hMenu)
+    {
+
+    }
+
 }

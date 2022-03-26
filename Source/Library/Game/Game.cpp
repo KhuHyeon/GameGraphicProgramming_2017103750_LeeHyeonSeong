@@ -15,6 +15,11 @@ namespace library
     /*--------------------------------------------------------------------
       TODO: Game::Game definition (remove the comment)
     --------------------------------------------------------------------*/
+	Game::Game(PCWSTR pszGameName) : m_pszGameName(pszGameName)
+	{
+		m_mainWindow = std::make_unique<MainWindow>();
+		m_renderer = std::make_unique<Renderer>();
+	}
 
 	/*M+M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M
 	  Method:   Game::Initialize
@@ -35,6 +40,14 @@ namespace library
     /*--------------------------------------------------------------------
       TODO: Game::Initialize definition (remove the comment)
     --------------------------------------------------------------------*/
+	HRESULT Game::Initialize(HINSTANCE hInstance, INT nCmdShow)
+	{
+		if (FAILED(m_mainWindow->Initialize(hInstance, nCmdShow, GetGameName())))
+			return 0;
+
+		if (FAILED(m_renderer->Initialize(m_mainWindow->GetWindow())))
+			return 0;
+	}
 
 	/*M+M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M
 	  Method:   Game::Run
@@ -47,6 +60,25 @@ namespace library
     /*--------------------------------------------------------------------
       TODO: Game::Run definition (remove the comment)
     --------------------------------------------------------------------*/
+	INT Game::Run()
+	{
+		MSG msg = { 0 };
+
+		while (WM_QUIT != msg.message)
+		{
+			if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
+			{
+				TranslateMessage(&msg);
+				DispatchMessage(&msg);
+			}
+			else
+			{
+				m_renderer->Render();
+			}
+		}
+
+		return static_cast<INT>(msg.wParam);
+	}
 
 	/*M+M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M
 	  Method:   Game::GetGameName
@@ -59,5 +91,9 @@ namespace library
     /*--------------------------------------------------------------------
       TODO: Game::GetGameName definition (remove the comment)
     --------------------------------------------------------------------*/
-
+	PCWSTR Game::GetGameName() const
+	{
+		return m_pszGameName;
+	}
+    
 }
