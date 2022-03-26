@@ -100,7 +100,45 @@ namespace library
     template <class DerivedType>
     LRESULT BaseWindow<DerivedType>::window_proc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
     {
+        DerivedType* pThis = NULL;
 
+        if (uMsg == WM_NCCREATE)
+        {
+            CREATESTRUCT* pCreate = reinterpret_cast<CREATESTRUCT*>(lParam);
+            pThis = reinterpret_cast<DerivedType*>(pCreate->lpCreateParams);
+            SetWindowLongPtr(hWnd, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(pThis));
+            pThis->m_hwnd = hWnd;
+        }
+        else
+        {
+            LONG_PTR ptr = GetWindowLongPtr(hWnd, GWLP_USERDATA);
+            pThis = reinterpret_cast<DerivedType*>(ptr);
+        }
+        if (pThis)
+        {
+            return pThis->HandleMessage(uMsg, wParam, lParam);
+        }
+        else
+        {
+            return DefWindowProc(hWnd, uMsg, wParam, lParam);
+        }
+    }
+
+
+    /*M+M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M
+        Method:   BaseWindow<DerivedType>::BaseWindow
+        Summary:  Constructor
+        Modifies: [m_hInstance, m_hWnd, m_pszWindowName].
+    M---M---M---M---M---M---M---M---M---M---M---M---M---M---M---M---M-M*/
+    /*--------------------------------------------------------------------
+      TODO: BaseWindow<DerivedType>::BaseWindow definition (remove the comment)
+    --------------------------------------------------------------------*/
+    template <class DerivedType>
+    BaseWindow<DerivedType>::BaseWindow()
+    {
+        m_hInstance = nullptr;
+        m_hWnd = nullptr;
+        m_pszWindowName = nullptr;
     }
 
     /*M+M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M
@@ -117,7 +155,7 @@ namespace library
     template <class DerivedType>
     HWND BaseWindow<DerivedType>::GetWindow() const
     {
-
+        return m_hWnd;
     }
 
 
@@ -150,6 +188,7 @@ namespace library
                   A handle to a menu, or specifies a child-window 
                   identifier depending on the window style
 
+                
       Modifies: [m_hInstance, m_pszWindowName, m_hWnd].
 
       Returns:  HRESULT
@@ -162,7 +201,25 @@ namespace library
     HRESULT BaseWindow<DerivedType>::initialize(HINSTANCE hInstance, INT nCmdShow, PCWSTR pszWindowName, DWORD dwStyle,
         INT x, INT y, INT nWidth, INT nHeight, HWND hWndParent, HMENU hMenu)
     {
+        DerivedType* pState = new (std::nothrow) DerivedType;
 
+        if (pState == nullptr)
+        {
+            return 0;
+        }
+
+        // Create window
+        m_hInstance = hInstance;
+        AdjustWindowRect(&rc, WS_OVERLAPPEDWINDOW, FALSE);
+        m_hWnd = CreateWindowEx(0, GetWindowClassName(), pszWindowName, dwStyle, x, y, nWidth, nHeight, hWndParent, hMenu,
+            hInstance, pState);
+
+        if (!m_hWnd)
+            return E_FAIL;
+
+        ShowWindow(m_hWnd, nCmdShow);
+
+        return S_OK;
     }
 
 }
