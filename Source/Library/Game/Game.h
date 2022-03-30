@@ -1,8 +1,8 @@
-/*+===================================================================
+﻿/*+===================================================================
   File:      GAME.H
 
   Summary:   Game header file that contains declarations of functinos
-			 used for the lab samples of Game Graphics Programming 
+             used for the lab samples of Game Graphics Programming
              course.
 
   Classes: Game
@@ -12,6 +12,7 @@
 #pragma once
 
 #include "Common.h"
+#include <memory>
 
 #include "Renderer/Renderer.h"
 #include "Window/MainWindow.h"

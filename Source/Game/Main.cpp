@@ -1,7 +1,7 @@
-/*+===================================================================
+﻿/*+===================================================================
   File:      MAIN.CPP
 
-  Summary:   This application demonstrates creating a Direct3D 11 
+  Summary:   This application demonstrates creating a Direct3D 11
              device in a object-oriented fashion
 
   Origin:    https://docs.microsoft.com/en-us/previous-versions//ff729719(v=vs.85)

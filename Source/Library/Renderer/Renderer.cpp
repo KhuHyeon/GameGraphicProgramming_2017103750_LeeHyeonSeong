@@ -14,16 +14,19 @@ namespace library
     /*--------------------------------------------------------------------
       TODO: Renderer::Renderer definition (remove the comment)
     --------------------------------------------------------------------*/
-    Renderer::Renderer() : m_driverType(D3D_DRIVER_TYPE_NULL), m_featureLevel(D3D_FEATURE_LEVEL_11_0)
-    {
-        m_d3dDevice = nullptr;
-        m_d3dDevice1 = nullptr;
-        m_immediateContext = nullptr;
-        m_immediateContext1 = nullptr;
-        m_swapChain = nullptr;
-    	m_swapChain1 = nullptr;
-        m_renderTargetView = nullptr;
-    }
+
+    Renderer::Renderer() 
+        : m_driverType(D3D_DRIVER_TYPE_NULL)
+        , m_featureLevel(D3D_FEATURE_LEVEL_11_0)
+        , m_d3dDevice(nullptr)
+        , m_d3dDevice1(nullptr)
+        , m_immediateContext(nullptr)
+        , m_immediateContext1(nullptr)
+        , m_swapChain(nullptr)
+        , m_swapChain1(nullptr)
+        , m_renderTargetView(nullptr)
+    { }
+
     /*M+M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M
       Method:   Renderer::Initialize
 
@@ -42,19 +45,17 @@ namespace library
     /*--------------------------------------------------------------------
       TODO: Renderer::Initialize definition (remove the comment)
     --------------------------------------------------------------------*/
-    HRESULT Renderer::Initialize(HWND hWnd)
+
+    HRESULT Renderer::Initialize(_In_ HWND hWnd)
     {
         HRESULT hr = S_OK;
 
         RECT rc;
         GetClientRect(hWnd, &rc);
-        UINT width = rc.right - rc.left;
-        UINT height = rc.bottom - rc.top;
+        UINT width = rc.right - static_cast<UINT>(rc.left);
+        UINT height = rc.bottom - static_cast<UINT>(rc.top);
 
         UINT createDeviceFlags = 0;
-#ifdef _DEBUG
-        createDeviceFlags |= D3D11_CREATE_DEVICE_DEBUG;
-#endif
 
         D3D_DRIVER_TYPE driverTypes[] =
         {
@@ -93,19 +94,18 @@ namespace library
             return hr;
 
         // Obtain DXGI factory from device (since we used nullptr for pAdapter above)
-        Microsoft::WRL::ComPtr<IDXGIFactory1> dxgiFactory;
+        ComPtr<IDXGIFactory1>           dxgiFactory(nullptr);
         {
-            Microsoft::WRL::ComPtr<IDXGIDevice> dxgiDevice;
+            ComPtr<IDXGIDevice>           dxgiDevice(nullptr);
             hr = m_d3dDevice.As(&dxgiDevice);
-
             if (SUCCEEDED(hr))
             {
-                Microsoft::WRL::ComPtr<IDXGIAdapter> adapter;
-                hr = dxgiDevice->GetAdapter(&adapter);
+                ComPtr<IDXGIAdapter>           adapter(nullptr);
+
+                hr = dxgiDevice->GetAdapter(adapter.GetAddressOf());
                 if (SUCCEEDED(hr))
                 {
-                    hr = adapter->GetParent(IID_PPV_ARGS(&dxgiFactory));
-                    
+                    hr = adapter->GetParent(__uuidof(IDXGIFactory1), (&dxgiFactory));
                 }
             }
         }
@@ -113,17 +113,15 @@ namespace library
             return hr;
 
         // Create swap chain
-        
-        Microsoft::WRL::ComPtr<IDXGIFactory2> dxgiFactory2;
+        ComPtr<IDXGIFactory2>           dxgiFactory2(nullptr);
         hr = dxgiFactory.As(&dxgiFactory2);
-
         if (dxgiFactory2)
         {
             // DirectX 11.1 or later
             hr = m_d3dDevice.As(&m_d3dDevice1);
             if (SUCCEEDED(hr))
             {
-                m_immediateContext.As(&m_immediateContext1);
+                hr = m_immediateContext.As(&m_immediateContext1);
             }
 
             DXGI_SWAP_CHAIN_DESC1 sd = {};
@@ -140,7 +138,6 @@ namespace library
             {
                 hr = m_swapChain1.As(&m_swapChain);
             }
-
         }
         else
         {
@@ -164,17 +161,18 @@ namespace library
         // Note this tutorial doesn't handle full-screen swapchains so we block the ALT+ENTER shortcut
         dxgiFactory->MakeWindowAssociation(hWnd, DXGI_MWA_NO_ALT_ENTER);
 
+
         if (FAILED(hr))
             return hr;
 
         // Create a render target view
-        Microsoft::WRL::ComPtr<ID3D11Texture2D> pBackBuffer;
-        hr = m_swapChain->GetBuffer(0, IID_PPV_ARGS(&pBackBuffer));
+        ComPtr<ID3D11Texture2D>           pBackBuffer(nullptr);
+
+        hr = m_swapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), (&pBackBuffer));
         if (FAILED(hr))
             return hr;
 
         hr = m_d3dDevice->CreateRenderTargetView(pBackBuffer.Get(), nullptr, m_renderTargetView.GetAddressOf());
-
         if (FAILED(hr))
             return hr;
 
@@ -182,8 +180,8 @@ namespace library
 
         // Setup the viewport
         D3D11_VIEWPORT vp;
-        vp.Width = static_cast<FLOAT>(width);
-        vp.Height = static_cast<FLOAT>(height);
+        vp.Width = (FLOAT)width;
+        vp.Height = (FLOAT)height;
         vp.MinDepth = 0.0f;
         vp.MaxDepth = 1.0f;
         vp.TopLeftX = 0;
@@ -192,6 +190,7 @@ namespace library
 
         return S_OK;
     }
+
     /*M+M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M+++M
       Method:   Renderer::Render
 
@@ -200,8 +199,10 @@ namespace library
     /*--------------------------------------------------------------------
       TODO: Renderer::Initialize definition (remove the comment)
     --------------------------------------------------------------------*/
+
     void Renderer::Render()
     {
+        // Just clear the backbuffer
         m_immediateContext->ClearRenderTargetView(m_renderTargetView.Get(), Colors::MidnightBlue);
         m_swapChain->Present(0, 0);
     }
