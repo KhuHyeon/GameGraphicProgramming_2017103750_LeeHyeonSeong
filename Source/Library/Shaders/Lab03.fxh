@@ -9,7 +9,7 @@
 // Vertex Shader
 //--------------------------------------------------------------------------------------
 /*--------------------------------------------------------------------
-  TODO: Vertex Shader function VS definition (remove the comment)
+
 --------------------------------------------------------------------*/
 float4 VS( float4 Pos : POSITION ) : SV_POSITION
 {
@@ -20,7 +20,7 @@ float4 VS( float4 Pos : POSITION ) : SV_POSITION
 // Pixel Shader
 //--------------------------------------------------------------------------------------
 /*--------------------------------------------------------------------
-  TODO: Pixel Shader function PS definition (remove the comment)
+
 --------------------------------------------------------------------*/
 float4 PS( float4 Pos : SV_POSITION ) : SV_Target
 {

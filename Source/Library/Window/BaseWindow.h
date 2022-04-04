@@ -95,7 +95,7 @@ namespace library
                     Integer value that your program returns to Windows
     M---M---M---M---M---M---M---M---M---M---M---M---M---M---M---M---M-M*/
     /*--------------------------------------------------------------------
-      TODO: BaseWindow<DerivedType>::WindowProc definition (remove the comment)
+     
     --------------------------------------------------------------------*/
 
     template<class DerivedType>
@@ -134,7 +134,7 @@ namespace library
         Modifies: [m_hInstance, m_hWnd, m_pszWindowName].
     M---M---M---M---M---M---M---M---M---M---M---M---M---M---M---M---M-M*/
     /*--------------------------------------------------------------------
-      TODO: BaseWindow<DerivedType>::BaseWindow definition (remove the comment)
+     
     --------------------------------------------------------------------*/
 
     template <class DerivedType>
@@ -153,7 +153,7 @@ namespace library
                     The handle to the window
     M---M---M---M---M---M---M---M---M---M---M---M---M---M---M---M---M-M*/
     /*--------------------------------------------------------------------
-      TODO: BaseWindow<DerivedType>::GetWindow definition (remove the comment)
+    
     --------------------------------------------------------------------*/
 
     template <class DerivedType>
@@ -197,7 +197,7 @@ namespace library
                   Status code
     M---M---M---M---M---M---M---M---M---M---M---M---M---M---M---M---M-M*/
     /*--------------------------------------------------------------------
-      TODO: BaseWindow<DerivedType>::initialize definition (remove the comment)
+    
     --------------------------------------------------------------------*/
     template <class DerivedType>
     HRESULT BaseWindow<DerivedType>::initialize(_In_ HINSTANCE hInstance,

@@ -13,7 +13,7 @@ namespace library
                   m_pixelShader, m_vertexLayout, m_vertexBuffer].
     M---M---M---M---M---M---M---M---M---M---M---M---M---M---M---M---M-M*/
     /*--------------------------------------------------------------------
-      TODO: Renderer::Renderer definition (remove the comment)
+    
     --------------------------------------------------------------------*/
     Renderer::Renderer()
         : m_driverType(D3D_DRIVER_TYPE_NULL)
@@ -49,7 +49,7 @@ namespace library
                   Status code
     M---M---M---M---M---M---M---M---M---M---M---M---M---M---M---M---M-M*/
     /*--------------------------------------------------------------------
-      TODO: Renderer::Initialize definition (remove the comment)
+      
     --------------------------------------------------------------------*/
     HRESULT Renderer::Initialize(HWND hWnd)
     {
@@ -76,6 +76,7 @@ namespace library
             D3D_FEATURE_LEVEL_11_0,
             D3D_FEATURE_LEVEL_10_1,
             D3D_FEATURE_LEVEL_10_0,
+            
         };
         UINT numFeatureLevels = ARRAYSIZE(featureLevels);
 
@@ -277,9 +278,9 @@ namespace library
 
         SimpleVertex aVertices[] =
         {
-            {XMFLOAT3(0.0f, 0.5f, 0.5f)},
-            {XMFLOAT3(0.5f, -0.5f, 0.5f)},
-            {XMFLOAT3(-0.5f, -0.5f, 0.5f)},
+            XMFLOAT3(0.0f, 0.5f, 0.5f),
+            XMFLOAT3(0.5f, -0.5f, 0.5f),
+            XMFLOAT3(-0.5f, -0.5f, 0.5f),
         };
 
         D3D11_BUFFER_DESC bd = {};
@@ -294,12 +295,12 @@ namespace library
         initData.SysMemPitch = 0;
         initData.SysMemSlicePitch = 0;
 
-        hr = m_d3dDevice->CreateBuffer(&bd, &initData, &m_vertexBuffer);
+        hr = m_d3dDevice->CreateBuffer(&bd, &initData, m_vertexBuffer.GetAddressOf());
         if (FAILED(hr))
             return hr;
 
         // create index buffer
-        ComPtr<ID3D11Buffer> pIndexBuffer = nullptr;
+        ComPtr<ID3D11Buffer> m_IndexBuffer = nullptr;
 
         WORD aIndices[] =
         {
@@ -311,14 +312,14 @@ namespace library
         i_bd.ByteWidth = sizeof(WORD) * 3;
         i_bd.BindFlags = D3D11_BIND_INDEX_BUFFER;
         i_bd.CPUAccessFlags = 0;
-        bd.MiscFlags = 0;
+        i_bd.MiscFlags = 0;
 
         D3D11_SUBRESOURCE_DATA i_iniData;
         i_iniData.pSysMem = aIndices;
         i_iniData.SysMemPitch = 0;
         i_iniData.SysMemSlicePitch = 0;
 
-        hr = m_d3dDevice->CreateBuffer(&i_bd, &i_iniData, &pIndexBuffer);
+        hr = m_d3dDevice->CreateBuffer(&i_bd, &i_iniData, m_IndexBuffer.GetAddressOf());
         if (FAILED(hr))
             return hr;
 
@@ -328,14 +329,14 @@ namespace library
         m_immediateContext->IASetVertexBuffers(
             0u,
             1u,
-            &m_vertexBuffer,
+            m_vertexBuffer.GetAddressOf(),
             &uStride,
             &uOffset
         );
 
         // Set index buffer
         m_immediateContext->IASetIndexBuffer(
-            pIndexBuffer.Get(),
+            m_IndexBuffer.Get(),
             DXGI_FORMAT_R16_UINT,
             0
         );
@@ -360,7 +361,7 @@ namespace library
       Summary:  Render the frame
     M---M---M---M---M---M---M---M---M---M---M---M---M---M---M---M---M-M*/
     /*--------------------------------------------------------------------
-      TODO: Renderer::Render definition (remove the comment)
+      
     --------------------------------------------------------------------*/
     void Renderer::Render()
     {
@@ -402,7 +403,7 @@ namespace library
                   Status code
     M---M---M---M---M---M---M---M---M---M---M---M---M---M---M---M---M-M*/
     /*--------------------------------------------------------------------
-      TODO: Renderer::compileShaderFromFile definition (remove the comment)
+    
     --------------------------------------------------------------------*/
     HRESULT Renderer::compileShaderFromFile(PCWSTR pszFileName, PCSTR pszEntryPoint, PCSTR szShaderModel,
         ID3DBlob** ppBlobOut)
