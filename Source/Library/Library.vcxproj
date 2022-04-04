@@ -117,6 +117,13 @@ copy "$(TargetDir)" "$(SolutionDir)..\Library\x64\Release"
     <ClInclude Include="Window\BaseWindow.h" />
     <ClInclude Include="Window\MainWindow.h" />
   </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Shaders\Lab03_PS.hlsl" />
+    <FxCompile Include="Shaders\Lab03_VS.hlsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shaders\Lab03.fxh" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

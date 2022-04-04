@@ -1,8 +1,8 @@
-﻿/*+===================================================================
+/*+===================================================================
   File:      GAME.H
 
   Summary:   Game header file that contains declarations of functinos
-             used for the lab samples of Game Graphics Programming
+			 used for the lab samples of Game Graphics Programming 
              course.
 
   Classes: Game
@@ -12,7 +12,6 @@
 #pragma once
 
 #include "Common.h"
-#include <memory>
 
 #include "Renderer/Renderer.h"
 #include "Window/MainWindow.h"
@@ -38,7 +37,7 @@ namespace library
     class Game final
     {
     public:
-        Game(_In_ PCWSTR pszGameName);
+        Game(PCWSTR pszGameName);
         Game(const Game& other) = delete;
         Game(Game&& other) = delete;
         Game& operator=(const Game& other) = delete;

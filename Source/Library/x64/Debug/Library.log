@@ -1,8 +1,3 @@
-﻿  Library.vcxproj -> C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Build\x64\Debug\Libraryd.lib
-  하위 디렉터리 또는 파일 C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Build\..\Library\x64\Debug이(가) 이미 있습니다.
-  C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Build\x64\Debug\Game.exe
-  C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Build\x64\Debug\Game.pdb
-  C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Build\x64\Debug\Libraryd.idb
-  C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Build\x64\Debug\Libraryd.lib
-  C:\Study\KhuClass\GameGraphicProgramming\KhuEngine\Build\x64\Debug\Libraryd.pdb
-          5개 파일이 복사되었습니다.
+﻿FXC : error X3501: 'main': entrypoint not found
+  
+  compilation failed; no code produced
