@@ -45,6 +45,15 @@
     <ClInclude Include="Renderer\Renderer.h">
       <Filter>Source Files\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="Shader\PixelShader.h">
+      <Filter>Source Files\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader\Shader.h">
+      <Filter>Source Files\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader\VertexShader.h">
+      <Filter>Source Files\Shaders</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game\Game.cpp">
@@ -56,18 +65,14 @@
     <ClCompile Include="Renderer\Renderer.cpp">
       <Filter>Source Files\Renderer</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <FxCompile Include="Shaders\Lab03_PS.hlsl">
+    <ClCompile Include="Shader\PixelShader.cpp">
       <Filter>Source Files\Shaders</Filter>
-    </FxCompile>
-    <FxCompile Include="Shaders\Lab03_VS.hlsl">
+    </ClCompile>
+    <ClCompile Include="Shader\Shader.cpp">
       <Filter>Source Files\Shaders</Filter>
-    </FxCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Shaders\Lab03.fxh">
+    </ClCompile>
+    <ClCompile Include="Shader\VertexShader.cpp">
       <Filter>Source Files\Shaders</Filter>
-    </None>
+    </ClCompile>
   </ItemGroup>
 </Project>
